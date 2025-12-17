@@ -1,0 +1,115 @@
+@use "../../styles/base/helpers" as *;
+
+.news {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-gap: rem(30);
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: rem(20);
+		background-color: var(--color-white);
+		padding-left: rem(20);
+	}
+
+	&__image-wrapper {
+		flex: 0 0 40%; // Фиксированная ширина для изображения
+		min-width: 200px; // Минимальная ширина
+		max-width: 300px; // Максимальная ширина
+		height: 200px; // Фиксированная высота
+		position: relative;
+		overflow: hidden;
+		border-radius: rem(8);
+
+		// Для сохранения пропорций
+		&::before {
+			content: "";
+			display: block;
+			padding-top: 56.25%; // Соотношение 16:9 (9/16*100)
+		}
+	}
+
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover; // !
+		object-position: center;
+		transition: transform 0.3s ease;
+
+		// При наведении - легкое увеличение
+		&:hover {
+			transform: scale(1.05);
+		}
+
+		// Специальные стили для no-image
+		&_no-img {
+			object-fit: contain; // Вместо cover для заглушки
+			padding: rem(20); // Отступы для заглушки
+			background-color: #f5f5f5; // Фон для заглушки
+
+			// Опционально: можно добавить иконку или текст поверх
+			&::after {
+				content: "No Image";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: #999;
+				font-size: rem(14);
+				font-weight: 500;
+			}
+		}
+	}
+
+	&__content {
+		flex: 1; // Занимает оставшееся пространство
+		padding: rem(20) rem(20) rem(20) 0;
+	}
+
+	&__title {
+		font-size: rem(20);
+		margin-bottom: rem(10);
+		line-height: 1.4;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: #0066cc;
+			}
+		}
+	}
+
+	&__author {
+		color: #666;
+		font-size: rem(14);
+		margin-bottom: rem(8);
+	}
+
+	&__description {
+		font-size: rem(16);
+		line-height: 1.5;
+		color: #444;
+		margin-bottom: rem(15);
+		display: -webkit-box;
+		-webkit-line-clamp: 3; // Ограничение строк
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	&__info {
+		color: #888;
+		font-size: rem(14);
+	}
+
+	&__date {
+		font-size: rem(14);
+	}
+}

@@ -1,0 +1,86 @@
+@use "helpers" as *;
+
+:root {
+	--color-white: #ffffff;
+	--color-primary: #ff3f3a;
+	--color-secondary: #ffcf2d;
+	--color-success: #03cea4;
+	--color-danger: #ff4242;
+	--color-warning: #f89828;
+
+	--color-bg: #dbe6f2;
+
+	--box-shadow: #{rem(15)} #{rem(15)} #{rem(15)} #{rem(-10)}
+		var(--color-gray-300);
+
+	--color-info: #5a87fc;
+	--color-gray-300: #e5e8ed;
+	--color-gray-400: #d7dadd;
+	--color-gray-600: #9a9ca5;
+	--color-gray-700: #787a80;
+	--color-gray-800: #424551;
+	--color-gray-900: #1e212c;
+
+	--gradient: linear-gradient(
+		45deg,
+		var(--color-dark-15) 64%,
+		var(--color-accent) 136%
+	);
+	// переменная ширины border
+	--border: #{rem(1)} solid var(--color-primary);
+	--border-input: #{rem(1)} solid var(--color-gray-600);
+
+	--font-family-base: "Inter", sans-serif;
+	--font-family-accent: "Kumbh Sans", sans-serif;
+
+	--container-width: #{rem(1137)};
+	// внутренние границы(можно посмотреть по mobile макету)
+	--container-padding-x: #{rem(16)};
+
+	--transition-duration: 0.2s;
+
+	--100vw: calc(100vw - var(--scrollbar-width));
+
+	@include laptop {
+		--container-width: #{rem(1230)};
+	}
+}
+// [data-theme="light"] {
+// 	--color-white: #ffffff;
+// 	--color-primary: #ff3f3a;
+// 	--color-secondary: #ffcf2d;
+// 	--color-success: #03cea4;
+// 	--color-danger: #ff4242;
+// 	--color-warning: #f89828;
+
+// 	--color-bg: #ffffff;
+
+// 	--box-shadow: #{rem(15)} #{rem(15)} #{rem(15)} #{rem(-10)}
+// 		var(--color-gray-300);
+
+// 	--color-info: #5a87fc;
+// 	--color-gray-300: #e5e8ed;
+// 	--color-gray-400: #d7dadd;
+// 	--color-gray-600: #9a9ca5;
+// 	--color-gray-700: #787a80;
+// 	--color-gray-800: #424551;
+// 	--color-gray-900: #1e212c;
+// }
+// [data-theme="dark"] {
+// 	--color-white: #e6e7ed;
+// 	--color-primary: #ff3f3a;
+// 	--color-secondary: #ffcf2d;
+// 	--color-success: #03cea4;
+// 	--color-danger: #ff4242;
+// 	--color-warning: #f89828;
+
+// 	--color-light: var(--color-warning);
+
+// 	--color-bg: #787a80;
+
+// 	--box-shadow: #{rem(0)} #{rem(15)} #{rem(15)} #{rem(-10)} var(--color-white);
+
+// 	--color-gray-600: #e6e7ed;
+// 	--color-gray-700: #e6e7ed;
+// 	--color-gray-900: #ffffff;
+// }
