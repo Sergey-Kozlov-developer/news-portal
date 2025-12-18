@@ -30,7 +30,7 @@ function NewsItem({
 			<div className="news__image-wrapper">
 				<img
 					className="news__image"
-					src={urlToImage || noImage} // Заглушка для отсутствующего изображения
+					src={urlToImage || noImage}
 					alt={title || "Новость"}
 					onError={handleImageError}
 				/>
