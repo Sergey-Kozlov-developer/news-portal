@@ -19,13 +19,13 @@ export interface INewsResponse {
 	totalResults: number;
 	articles: INewsArticle[];
 }
-const apiUrl = import.meta.env.VITE_APP_REMOTE_SERVER;
+// const apiUrl = import.meta.env.VITE_APP_REMOTE_SERVER;
 const apiKey = import.meta.env.VITE_API_KEY;
 
 export const newsApi = createApi({
 	reducerPath: "newsApi",
 	baseQuery: fetchBaseQuery({
-		baseUrl: apiUrl,
+		baseUrl: "/api",
 		headers: {
 			"X-Api-Key": apiKey,
 		},
