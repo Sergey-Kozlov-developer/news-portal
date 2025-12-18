@@ -38,7 +38,7 @@ export const newsApi = createApi({
 					params: {
 						q,
 						pageSize,
-						language: "en",
+						language: "ru",
 					},
 				}),
 			}
